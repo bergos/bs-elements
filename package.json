@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npm run build:css && npm run build:examples",
     "build:css": "./bin/css-to-esm.js node_modules/bootstrap/dist/css/bootstrap.min.css > css.js",
-    "build:examples": "vite build --base=./ --outDir=../dist examples",
+    "build:examples": "vite build --base=./ --outDir=../docs examples",
     "dev": "vite examples",
     "test": "stricter-standard *.js bin examples src"
   },
@@ -40,6 +40,6 @@
     "vite": "^6.1.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "rm -rf dist && npm run build && git add css.js dist"
+    "pre-commit": "rm -rf docs && npm run build && git add css.js docs"
   }
 }
